@@ -15,15 +15,13 @@ set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_CXX_STANDARD 17)
 
 include_directories(${PCL_INCLUDE_DIRS})
-include_directories(/opt/gurobi910/linux64/include/)
+include_directories(/opt/gurobi910/linux64/include/ include/)
 
 link_directories(${PCL_LIBRARY_DIRS} /opt/gurobi910/linux64/lib)
 
 add_definitions(-DCGAL_USE_BASIC_VIEWER)
 add_definitions(${PCL_DEFINITIONS})
 
-#add_executable(linux_ilp_example ilp_example.cpp)
-add_executable(linux_ilp_examples ilp_examples.cpp max_quality.cpp cumulative_quality.cpp bare_visibility.cpp Solution.cpp)
+add_executable(3d_coverage ilp_examples.cpp max_quality.cpp cumulative_quality.cpp bare_visibility.cpp Solution.cpp)
 
-#target_link_libraries(linux_ilp_example ${PCL_LIBRARIES} gurobi_c++ gurobi91 m CGAL::CGAL CGAL::CGAL_Core ${OpenMP_CXX_FLAGS})
-target_link_libraries(linux_ilp_examples ${PCL_LIBRARIES} gurobi_c++ gurobi91 m CGAL::CGAL CGAL::CGAL_Core OpenMP::OpenMP_CXX)
+target_link_libraries(3d_coverage ${PCL_LIBRARIES} gurobi_c++ gurobi91 m CGAL::CGAL CGAL::CGAL_Core OpenMP::OpenMP_CXX)
