@@ -9,9 +9,10 @@ Three Models were studied,
 
 To run the program, Gurobi and Point Cloud Library are needed. First replace the Gurobi related file path in CMakeList as the actual installation path. Then,
 ```
-$mkdir build && cd build
-$cmake ../
-$make
-$./3d_coverage [parameter1 parameter2 ...]
+$ mkdir build && cd build
+$ cmake ../
+$ make
+$ mv ../icu_model/uniform_out.pcd . # or a pcd file and rename it into uniform_out.pcd
+$ ./3d_coverage [parameter1 parameter2 ...] 
 ```
 
