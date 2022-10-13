@@ -22,6 +22,6 @@ link_directories(${PCL_LIBRARY_DIRS} /opt/gurobi910/linux64/lib)
 add_definitions(-DCGAL_USE_BASIC_VIEWER)
 add_definitions(${PCL_DEFINITIONS})
 
-add_executable(3d_coverage ilp_examples.cpp max_quality.cpp cumulative_quality.cpp bare_visibility.cpp Solution.cpp)
+add_executable(3d_coverage max_quality.cpp cumulative_quality.cpp bare_visibility.cpp Solution.cpp)
 
 target_link_libraries(3d_coverage ${PCL_LIBRARIES} gurobi_c++ gurobi91 m CGAL::CGAL CGAL::CGAL_Core OpenMP::OpenMP_CXX)
